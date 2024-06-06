@@ -1,5 +1,5 @@
 import { Box, Flex, Link, Button, useColorModeValue, Stack, useDisclosure, IconButton, HStack } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { useSupabaseAuth } from "../integrations/supabase/auth.jsx";
 
