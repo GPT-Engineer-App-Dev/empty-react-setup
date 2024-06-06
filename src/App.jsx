@@ -1,6 +1,8 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes, Navigate } from "react-router-dom";
 import Index from "./pages/Index.jsx";
 import Login from "./pages/Login.jsx";
+import Private from "./pages/Private.jsx";
+import Navbar from "./components/Navbar.jsx";
 import { useSupabaseAuth } from "./integrations/supabase/auth.jsx";
 
 function App() {
@@ -8,9 +10,11 @@ function App() {
 
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Index />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/private" element={session ? <Private /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
   );
